@@ -8,8 +8,8 @@ void initialize(void)
 	if (!mont)
 		malloc_error();
 	mont->n = 0;
-	mont->line_number = 1;
-	mont->arr = NULL;
 	mont->entry = 0;
+	mont->arr = NULL;
+	mont->line_number = 1;
 	mont->read_len = 0;
 }
