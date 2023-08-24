@@ -51,9 +51,9 @@ typedef struct instruction_s
 typedef struct gv_s
 {
 	FILE *stream;
-	char **av;
-	char *opcode;
-	int data;
+	char **instruction;
+	/*char *opcode;*/
+	/*int data;*/
 	int line_number;
 	stack_t *head;
 	int status;
