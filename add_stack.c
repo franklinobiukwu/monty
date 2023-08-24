@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include "monty.h"
+=======
+i#include "monty.h"
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
 /**
  * add - add a new node at the beginning of a list
  * @stack: a struct node pointer to the list
@@ -7,7 +11,11 @@
  */
 void add(stack_t **stack, unsigned int);
 {
+<<<<<<< HEAD
     stack_t *new_node;
+=======
+    stack_t *next_node;
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
     int num;
 
     if (mont->arr[1] == NULL || !is_digit(mont->arr[1]))
@@ -20,6 +28,7 @@ void add(stack_t **stack, unsigned int);
         exit(EXIT_FAILURE);
     }
     num = (int)atoi(mont->arr[1]);
+<<<<<<< HEAD
     new_node = malloc(sizeof(stack_t));
     if (!new_node)
         malloc_error();
@@ -35,6 +44,23 @@ void add(stack_t **stack, unsigned int);
         (*stack)->prev = new_node;
     }
     *stack = new_node;
+=======
+    next_node = malloc(sizeof(stack_t));
+    if (!next_node)
+        malloc_error();
+    next_node->n = num;
+    if (*stack == NULL)
+    {
+        next_node->prev = NULL;
+        next_node->next = NULL;
+    }
+    else
+    {
+        next_node->next = *stack;
+        (*stack)->prev = next_node;
+    }
+    *stack = next_node;
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
     
 }
 /**
@@ -81,7 +107,11 @@ void find_entry(stack_t **stack, unsigned int line_number)
  */
 void end_stack(stack_t **stack, unsigned int line_number)
 {
+<<<<<<< HEAD
     stack_t *new_node, *current;
+=======
+    stack_t *next_node, *current;
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
     int num;
 
     if (mont->arr[1] == NULL || !is_digit(mont->arr[1]))
@@ -95,6 +125,7 @@ void end_stack(stack_t **stack, unsigned int line_number)
     }
     num = (int)atoi(mont->arr[1]);
     current = *stack;
+<<<<<<< HEAD
     new_node = malloc(sizeof(stack_t));
     if (!new_node)
         malloc_error();
@@ -103,11 +134,26 @@ void end_stack(stack_t **stack, unsigned int line_number)
     new_node->prev = NULL;
     if (*stack == NULL)
         *stack = new_node;
+=======
+    next_node = malloc(sizeof(stack_t));
+    if (!next_node)
+        malloc_error();
+    next_node->n = num;
+    next_node->next = NULL;
+    next_node->prev = NULL;
+    if (*stack == NULL)
+        *stack = next_node;
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
     else
     {
         while (current && current->next)
             current = current->next;
+<<<<<<< HEAD
         current->next = new_node;
         new_node->prev = current;
+=======
+        current->next = next_node;
+        next_node->prev = current;
+>>>>>>> eb2c07bce4d74d19215e0144853fd13ffb8da388
     }
 }
