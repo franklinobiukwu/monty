@@ -7,6 +7,7 @@
 
 /*DECLARE GLOBAL VARIABLE*/
 struct gv_s *gv;
+struct instruction_s inst;
 
 /**
 * main - This program is a monty byte code interpreter

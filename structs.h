@@ -53,7 +53,7 @@ typedef struct gv_s
 	FILE *stream;
 	char **instruction;
 	/*char *opcode;*/
-	/*int data;*/
+	int data;
 	int line_number;
 	stack_t *head;
 	int status;
