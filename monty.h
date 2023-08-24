@@ -20,7 +20,7 @@
 extern struct gv_s *gv;
 
 /*FUNCTION PROTOTYPES*/
-int readline();
+int readline(void);
 char **tokenize(char *str, const char *delim);
 void kill(const char *message);
 void free_stack(void);
