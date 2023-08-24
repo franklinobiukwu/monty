@@ -7,7 +7,7 @@ i#include "monty.h"
  */
 void add(stack_t **stack, unsigned int);
 {
-    stack_t *new_node;
+    stack_t *next_node;
     int num;
 
     if (mont->arr[1] == NULL || !is_digit(mont->arr[1]))
@@ -20,21 +20,21 @@ void add(stack_t **stack, unsigned int);
         exit(EXIT_FAILURE);
     }
     num = (int)atoi(mont->arr[1]);
-    new_node = malloc(sizeof(stack_t));
-    if (!new_node)
+    next_node = malloc(sizeof(stack_t));
+    if (!next_node)
         malloc_error();
-    new_node->n = num;
+    next_node->n = num;
     if (*stack == NULL)
     {
-        new_node->prev = NULL;
-        new_node->next = NULL;
+        next_node->prev = NULL;
+        next_node->next = NULL;
     }
     else
     {
-        new_node->next = *stack;
-        (*stack)->prev = new_node;
+        next_node->next = *stack;
+        (*stack)->prev = next_node;
     }
-    *stack = new_node;
+    *stack = next_node;
     
 }
 /**
@@ -81,7 +81,7 @@ void find_entry(stack_t **stack, unsigned int line_number)
  */
 void end_stack(stack_t **stack, unsigned int line_number)
 {
-    stack_t *new_node, *current;
+    stack_t *next_node, *current;
     int num;
 
     if (mont->arr[1] == NULL || !is_digit(mont->arr[1]))
@@ -95,19 +95,19 @@ void end_stack(stack_t **stack, unsigned int line_number)
     }
     num = (int)atoi(mont->arr[1]);
     current = *stack;
-    new_node = malloc(sizeof(stack_t));
-    if (!new_node)
+    next_node = malloc(sizeof(stack_t));
+    if (!next_node)
         malloc_error();
-    new_node->n = num;
-    new_node->next = NULL;
-    new_node->prev = NULL;
+    next_node->n = num;
+    next_node->next = NULL;
+    next_node->prev = NULL;
     if (*stack == NULL)
-        *stack = new_node;
+        *stack = next_node;
     else
     {
         while (current && current->next)
             current = current->next;
-        current->next = new_node;
-        new_node->prev = current;
+        current->next = next_node;
+        next_node->prev = current;
     }
 }
