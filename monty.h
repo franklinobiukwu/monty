@@ -29,6 +29,7 @@ char *error_message(char *message);
 void add_stack(stack_t **stack, unsigned int);
 void push_stack(stack_t **stack, unsigned int);
 void end_stack(stack_t **stack, unsigned int);
+void initialize(void);
 
 #endif /*MONTY_H*/
 
