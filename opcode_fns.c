@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * add_stack - function that creates a new node to the stack.
- * @new_created_node: a pointer to the newly created node.
+ * _add - function that creates a new node to the stack.
+ * @new_node: a pointer to the newly created node.
  * @lin: an integer representing the line number of the opcode.
  */
-void add_stack(stack_t *new_node, __attribute__((unused)) unsigned int lin)
+void _add(stack_t *new_node, __attribute__((unused)) unsigned int lin)
 {
     stack_t *temporary;
 
