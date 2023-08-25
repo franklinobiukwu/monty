@@ -14,7 +14,7 @@ void add(stack_t **stack, unsigned int);
     {
         fprintf(stderr, "L %d: usage: push integer\n", line_number);
         free_stack(stack);
-        free_array();
+        free_arr();
         fclose(mont->file);
         free(mont);
         exit(EXIT_FAILURE);
