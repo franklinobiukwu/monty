@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
 * _push - Function that pushes data to stack
@@ -72,7 +73,11 @@ void _pint(__attribute((unused))stack_t **stack,
 
 	/*Return if head is NULL*/
 	if (head == NULL)
-		return;
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty",
+	  gv->line_number);
+		kill(NULL);
+	}
 	printf("%d\n", head->n);
 }
 
@@ -91,7 +96,11 @@ void _pop(__attribute((unused))stack_t **stack,
 
 	/*Return if head is NULL*/
 	if (gv->head == NULL)
-		return;
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack",
+	  gv->line_number);
+		kill(NULL);
+	}
 	gv->head = gv->head->next;
 	gv->head->prev = NULL;
 
