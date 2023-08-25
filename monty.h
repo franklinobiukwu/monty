@@ -1,11 +1,17 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define BUF_SIZE 1024
 
 /*LIBRARY INCLUDES*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 /*STRUCTS*/
 #include "structs.h"
@@ -34,3 +40,4 @@ void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
 #endif /*MONTY_H*/
+
