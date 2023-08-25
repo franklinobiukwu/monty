@@ -5,6 +5,8 @@
 
 #define SIZE 1024
 
+void no_betty(void);
+
 /*DECLARE GLOBAL VARIABLE*/
 struct gv_s *gv;
 struct instruction_s inst;
@@ -34,7 +36,7 @@ int main(int argc, char **argv)
 	/* VALIDATE USAGE */
 	if (argc != 2)
 	{
-		sprintf(message, "USAGE: monty file %s", argv[1]);
+		sprintf(message, "USAGE: monty file");
 		kill(message);
 	}
 
@@ -59,10 +61,17 @@ int main(int argc, char **argv)
 			continue;
 
 		/* Execute instruction */
-/*		gv->status = execute();*/
-		printf("Executing");
+		gv->status = execute();
 
-	} while (gv->status != 0);
+	} while (gv->status == 0);
 
 	return (0);
+}
+
+/**
+* do_betty - do betts
+* Return: void
+*/
+void do_betty(void)
+{
 }

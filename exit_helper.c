@@ -27,9 +27,7 @@ void kill(const char *message)
 
 
 /**
-* list_free_s - frees a stack_t type linked list
-*
-* @head: pointer to head of the list
+* free_stack - frees a stack_t type linked list
 *
 */
 
@@ -49,7 +47,7 @@ void free_stack(void)
 /**
 * free_arr - frees a string type linked list
 *
-* @head: pointer to head of the list
+* @arr: pointer to head of list/array
 *
 */
 

@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <string.h>
 
 /**
 * tokenize - tokenizes a string
@@ -13,26 +12,23 @@
 char **tokenize(char *str, const char *delim)
 {
 	char **str_ptr = NULL;
-	char *saveptr = NULL;
-	char *token;
+	char *token, *str_cpy;
 	int i, count = 0;
-	char *str_cpy;
 
 	if (str == NULL || delim == NULL)
 		kill("Error: Input string or Delimiter string is empty!");
 
-	str_cpy = strdup(str);
+	str_cpy = _strdup(str);
 	if (str_cpy == NULL)
 		kill("Error: strdup failed");
 
-	token = strtok_r(str_cpy, delim, &saveptr);
+	token = strtok(str_cpy, delim);
 
 	while (token)
 	{
 		count++;
-		token = strtok_r(NULL, delim, &saveptr);
+		token = strtok(NULL, delim);
 	}
-
 	/*free duplicated string*/
 	free(str_cpy);
 
@@ -44,17 +40,15 @@ char **tokenize(char *str, const char *delim)
 		kill("Error: malloc failed");
 
 	/*tokenize string*/
-	token = strtok_r(str, delim, &saveptr);
+	token = strtok(str, delim);
 
 	i = 0;
-
 	while (token)
 	{
 		str_ptr[i] = token;
-		token = strtok_r(NULL, delim, &saveptr);
+		token = strtok(NULL, delim);
 		i++;
 	}
 	str_ptr[i] = NULL;
-
 	return (str_ptr);
 }

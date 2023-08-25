@@ -9,7 +9,7 @@
 * Return: 0 on success, 1 on newline, 2 on error
 */
 
-int readline()
+int readline(void)
 {
 	char *line;
 	char buff[SIZE];
@@ -18,22 +18,21 @@ int readline()
 	line = fgets(buff, SIZE, gv->stream);
 
 	/*Exit program if EOF is reached*/
-	if(line == NULL)
+	if (line == NULL)
 	{
 		if (feof(gv->stream))
-			return (0);
-		else
-			kill("Error: Failed to read line from file");
+			return (1);
+		kill("Error: Failed to read line from file");
 	}
 
 	/*Return 1 if line is newline character*/
-	if (strcmp(line, "\n") == 0 )
+	if (strcmp(line, "\n") == 0)
 		return (1);
 
 	/*VALIDATE INSTRUCTION*/
 	/*Clean and tokenize instruction*/
-	gv->instruction = tokenize(line, " /t/n");
+	gv->instruction = tokenize(line, " \t\n");
 	/*Validate instructions*/
-
+	validate();
 	return (0);
 }

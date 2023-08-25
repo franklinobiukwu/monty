@@ -35,11 +35,10 @@ typedef struct instruction_s
 
 
 /**
- * struct global_v - global variables
+ * struct gv_s - global variables
  *
- * @FILE: File to read instructions from
- * @av: Argument vector
- * @opcode: Instruction opcode
+ * @stream: File to read instructions from
+ * @instruction: Argument vector
  * @data: Instruction data
  * @line_number: Line number or count of instruction being executed
  * @head: head of linked list (stack or queue)
@@ -52,9 +51,8 @@ typedef struct gv_s
 {
 	FILE *stream;
 	char **instruction;
-	/*char *opcode;*/
 	int data;
-	int line_number;
+	unsigned int line_number;
 	stack_t *head;
 	int status;
 } gv_t;
