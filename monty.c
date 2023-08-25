@@ -58,7 +58,13 @@ int main(int argc, char **argv)
 		gv->status = readline();
 		/*continue if line is newline or blank*/
 		if (gv->status == 1)
+		{
+			/*set status to 0 so that loop condition is met*/
+			gv->status = 0;
 			continue;
+		}
+		if (gv->status == 2)
+			break;
 
 		/* Execute instruction */
 		gv->status = execute();

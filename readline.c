@@ -21,7 +21,7 @@ int readline(void)
 	if (line == NULL)
 	{
 		if (feof(gv->stream))
-			return (1);
+			return (2);
 		kill("Error: Failed to read line from file");
 	}
 
