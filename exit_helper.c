@@ -20,7 +20,7 @@ void kill(const char *message)
 		if (gv->head != NULL)
 			free_stack();
 		/*Free the global variable struct*/
-		free(gv);
+		/*free(gv);*/
 	}
 	exit(EXIT_FAILURE);
 }

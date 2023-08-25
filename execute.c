@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
+
 
 /**
  * execute - Execute opcode

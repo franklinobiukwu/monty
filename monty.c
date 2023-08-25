@@ -64,6 +64,9 @@ int main(int argc, char **argv)
 		gv->status = execute();
 
 	} while (gv->status == 0);
+	fclose(gv->stream);
+	free_stack();
+	free(gv);
 
 	return (0);
 }
