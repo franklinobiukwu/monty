@@ -2,6 +2,28 @@
 #include <stdio.h>
 
 /**
+ * add_stack - function that creates a new node to the stack.
+ * @new_created_node: a pointer to the newly created node.
+ * @lin: an integer representing the line number of the opcode.
+ */
+void add_stack(stack_t *new_node, __attribute__((unused)) unsigned int lin)
+{
+    stack_t *temporary;
+
+    if (new_node == NULL || *new_node == NULL)
+        exit(EXIT_FAILURE);
+    if (head == NULL)
+    {
+        head = *new_node;
+        return;
+    }
+    temporary = head;
+    head = *new_node;
+    head->next = temporary;
+    temporary->prev = head;
+}
+
+/**
 * _push - Function that pushes data to stack
 *
 * @stack: pointer to stack
