@@ -6,7 +6,7 @@
  * @stack: a pointer to the newly created node.
  * @line_number: an integer representing the line number of the opcode.
  */
-void _add(stack_t *stack,, __attribute__((unused)) unsigned int line_number)
+void _add(stack_t **stack,, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *temporary;
 
