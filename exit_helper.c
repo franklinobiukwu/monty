@@ -26,15 +26,9 @@ void kill(const char *message)
 }
 
 
-/**
-* free_stack - frees a stack_t type linked list
-*
-*/
-
-
 
 /**
-* clean_up - print errors, free memories
+* clean_up - Fuction that print errors and free memories
 *
 * @message: error message to be printed
 *
@@ -57,6 +51,11 @@ void clean_up(const char *message)
 	}
 }
 
+
+/**
+* free_stack - frees a stack_t type linked list
+*
+*/
 
 void free_stack(void)
 {

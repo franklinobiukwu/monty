@@ -26,6 +26,9 @@ int main(int argc, char **argv)
 
 	/*CREATE DYNAMIC MEMORY FOR GLOBAL VARIABLE POINTER*/
 	gv = (struct gv_s *)malloc(sizeof(struct gv_s));
+	/*Qiut program if malloc fails*/
+	if (gv == NULL)
+		kill("Error: malloc failed");
 
 	/*DEFINE/INITIALIZE GLOBAL VARIABLES*/
 	gv->line_number = 0;
