@@ -74,7 +74,7 @@ void _pint(__attribute((unused))stack_t **stack,
 	/*Return if head is NULL*/
 	if (head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty",
+		fprintf(stderr, "L%d: can't pint, stack empty\n",
 	  gv->line_number);
 		kill(NULL);
 	}
