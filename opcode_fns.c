@@ -101,8 +101,8 @@ void _pop(__attribute((unused))stack_t **stack,
 	  gv->line_number);
 		kill(NULL);
 	}
+	/*remove top node*/
 	gv->head = gv->head->next;
-	gv->head->prev = NULL;
 
 	/*Free removed stack*/
 	free(temp);
