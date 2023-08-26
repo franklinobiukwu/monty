@@ -44,7 +44,7 @@ void _add(__attribute((unused))stack_t **stack,
 	/*If stack is NULL of stack elements are less than 2*/
 	if (head == NULL || head->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short",
+		fprintf(stderr, "L%d: can't add, stack too short\n",
 	  gv->line_number);
 		kill(NULL);
 	}
