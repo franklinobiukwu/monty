@@ -17,7 +17,7 @@ void _swap(__attribute((unused))stack_t **stack,
 	/*Return if stack is NULL of has only one node*/
 	if (gv->head == NULL || gv->head->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short",
+		fprintf(stderr, "L%d: can't swap, stack too short\n",
 	  gv->line_number);
 		kill(NULL);
 	}

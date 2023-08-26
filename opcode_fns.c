@@ -97,7 +97,7 @@ void _pop(__attribute((unused))stack_t **stack,
 	/*Return if head is NULL*/
 	if (gv->head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack",
+		fprintf(stderr, "L%d: can't pop an empty stack\n",
 	  gv->line_number);
 		kill(NULL);
 	}
