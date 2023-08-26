@@ -70,9 +70,10 @@ int main(int argc, char **argv)
 		gv->status = execute();
 
 	} while (gv->status == 0);
-	fclose(gv->stream);
-	free_stack();
-	free(gv);
+/*	fclose(gv->stream);*/
+/*	free_stack();*/
+/*	free(gv);*/
+	clean_up(NULL);
 
 	return (0);
 }

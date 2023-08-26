@@ -24,6 +24,7 @@ int readline(void);
 void validate(void);
 char **tokenize(char *str, const char *delim);
 void kill(const char *message);
+void clean_up(const char *message);
 void free_stack(void);
 void free_arr(char **arr);
 char *error_message(char *message);

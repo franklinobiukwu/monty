@@ -32,6 +32,12 @@ int readline(void)
 	/*VALIDATE INSTRUCTION*/
 	/*Clean and tokenize instruction*/
 	gv->instruction = tokenize(line, " \t\n");
+	/*Return 1 if instruction is blank spaces*/
+	if (gv->instruction == NULL || gv->instruction[0] == NULL)
+	{
+		free(gv->instruction);
+		return (1);
+	}
 	/*Validate instructions*/
 	validate();
 	return (0);

@@ -23,15 +23,15 @@ void validate(void)
 	{
 		if (gv->instruction[1] == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n",
+			fprintf(stderr, "L%d: usage: %s integer\n",
 		gv->line_number, gv->instruction[0]);
 			kill(NULL);
 		}
 		gv->data = strtol(gv->instruction[1], &endptr, 10);
 		if (*endptr != '\0')
 		{
-			fprintf(stderr, "L%d: usage: push integer\n",
-				gv->line_number);
+			fprintf(stderr, "L%d: usage: %s integer\n",
+				gv->line_number, gv->instruction[0]);
 			kill(NULL);
 		}
 	}

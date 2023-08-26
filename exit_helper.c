@@ -16,11 +16,11 @@ void kill(const char *message)
 		if (gv->stream != NULL)
 			fclose(gv->stream);
 		if (gv->instruction != NULL)
-			free_arr(gv->instruction);
+			free(gv->instruction);
 		if (gv->head != NULL)
 			free_stack();
 		/*Free the global variable struct*/
-		/*free(gv);*/
+		free(gv);
 	}
 	exit(EXIT_FAILURE);
 }
@@ -30,6 +30,33 @@ void kill(const char *message)
 * free_stack - frees a stack_t type linked list
 *
 */
+
+
+
+/**
+* clean_up - print errors, free memories
+*
+* @message: error message to be printed
+*
+*/
+
+void clean_up(const char *message)
+{
+	if (gv != NULL)
+	{
+		if (message != NULL)
+			fprintf(stderr, "%s\n", message);
+		if (gv->stream != NULL)
+			fclose(gv->stream);
+/*		if (gv->instruction != NULL)*/
+/*			free(gv->instruction);*/
+		if (gv->head != NULL)
+			free_stack();
+		/*Free the global variable struct*/
+		free(gv);
+	}
+}
+
 
 void free_stack(void)
 {
