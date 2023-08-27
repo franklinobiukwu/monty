@@ -35,13 +35,7 @@ void validate(void)
 			kill(NULL);
 		}
 	}
-	else if (strcmp(gv->instruction[0], "pall") == 0 ||
-		strcmp(gv->instruction[0], "pop") == 0 ||
-		strcmp(gv->instruction[0], "pint") == 0 ||
-		strcmp(gv->instruction[0], "swap") == 0 ||
-		strcmp(gv->instruction[0], "add") == 0 ||
-		strcmp(gv->instruction[0], "sub") == 0 ||
-		strcmp(gv->instruction[0], "nop") == 0)
+	else if (valid())
 	{
 		return;
 	}
@@ -51,4 +45,25 @@ void validate(void)
 			gv->line_number, gv->instruction[0]);
 		kill(NULL);
 	}
+}
+
+
+/**
+* valid - Function that returns 1 if true
+*
+* Return: 1 if vald or 0 if in invalid
+*/
+
+int valid(void)
+{
+	if (strcmp(gv->instruction[0], "pall") == 0 ||
+	     strcmp(gv->instruction[0], "pop") == 0 ||
+	     strcmp(gv->instruction[0], "pint") == 0 ||
+	     strcmp(gv->instruction[0], "swap") == 0 ||
+	     strcmp(gv->instruction[0], "add") == 0 ||
+	     strcmp(gv->instruction[0], "nop") == 0 ||
+	     strcmp(gv->instruction[0], "sub") == 0 ||
+	     strcmp(gv->instruction[0], "div") == 0)
+		return (1);
+	return (0);
 }

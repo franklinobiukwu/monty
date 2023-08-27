@@ -22,6 +22,7 @@ extern struct gv_s *gv;
 /*FUNCTION PROTOTYPES*/
 int readline(void);
 void validate(void);
+int valid(void);
 char **tokenize(char *str, const char *delim);
 void kill(const char *message);
 void clean_up(const char *message);
@@ -40,6 +41,7 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
 
 #endif /*MONTY_H*/
 
