@@ -32,8 +32,9 @@ int readline(void)
 	/*VALIDATE INSTRUCTION*/
 	/*Clean and tokenize instruction*/
 	gv->instruction = tokenize(line, " \t\n");
-	/*Return 1 if instruction is blank spaces*/
-	if (gv->instruction == NULL || gv->instruction[0] == NULL)
+	/*Return 1 if instruction is blank spaces or is comment*/
+	if (gv->instruction == NULL || gv->instruction[0] == NULL ||
+	gv->instruction[0][0] == '#')
 	{
 		free(gv->instruction);
 		return (1);
