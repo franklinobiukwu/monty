@@ -14,10 +14,10 @@ int execute(void)
 	int i;
 
 	char *cmd_str[] = {"push", "pall", "pint", "pop", "swap", "add",
-	"nop", "sub", "div"};
+	"nop", "sub", "div", "mul"};
 
 	void (*cmd[])(stack_t **, unsigned int) = {&_push, &_pall, &_pint, &_pop,
-		&_swap, &_add,  &_nop, &_sub, &_div};
+		&_swap, &_add,  &_nop, &_sub, &_div, &_mul};
 
 	/*Determine the number of commands*/
 	num_of_cmd = (sizeof(cmd_str) / sizeof(cmd_str[0]));
