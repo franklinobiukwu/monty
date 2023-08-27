@@ -26,7 +26,7 @@ int readline(void)
 	}
 
 	/*Return 1 if line is newline character*/
-	if (strcmp(line, "\n") == 0)
+	if (strcmp(line, "\n") == 0 || line[0] == '#')
 		return (1);
 
 	/*VALIDATE INSTRUCTION*/
