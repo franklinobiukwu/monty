@@ -40,6 +40,7 @@ void validate(void)
 		strcmp(gv->instruction[0], "pint") == 0 ||
 		strcmp(gv->instruction[0], "swap") == 0 ||
 		strcmp(gv->instruction[0], "add") == 0 ||
+		strcmp(gv->instruction[0], "sub") == 0 ||
 		strcmp(gv->instruction[0], "nop") == 0)
 	{
 		return;

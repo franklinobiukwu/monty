@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 
 
 /**
@@ -14,10 +13,11 @@ int execute(void)
 	int num_of_cmd;
 	int i;
 
-	char *cmd_str[] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
+	char *cmd_str[] = {"push", "pall", "pint", "pop", "swap", "add",
+	"nop", "sub"};
 
 	void (*cmd[])(stack_t **, unsigned int) = {&_push, &_pall, &_pint, &_pop,
-		&_swap, &_add,  &_nop};
+		&_swap, &_add,  &_nop, &_sub};
 
 	/*Determine the number of commands*/
 	num_of_cmd = (sizeof(cmd_str) / sizeof(cmd_str[0]));
